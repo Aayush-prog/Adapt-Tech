@@ -1,3 +1,10 @@
+buildscript {
+    ext.kotlin_version = '1.9.20' // Change here
+    repositories {
+        google()
+        jcenter()
+    }
+}
 allprojects {
     repositories {
         google()

@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
           //   color: Colors.white,
           // ),
           children: [
-            const LandingPage(),
-            // const Home(),
+            // const LandingPage(),
+            Home(),
           ]),
       // bottomNavigationBar: Nav(),
     ));
