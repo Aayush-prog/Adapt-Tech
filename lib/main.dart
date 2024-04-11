@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
-import 'package:one_byte_foods/homepage.dart';
+import 'package:one_byte_foods/home/search.dart';
 import 'package:one_byte_foods/landingpage.dart';
-import 'package:one_byte_foods/nav.dart';
+import 'package:one_byte_foods/restaurantPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,15 +15,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
       body: ListView(
-          padding: EdgeInsets.only(top: 30),
+          padding: const EdgeInsets.only(top: 30),
           // height: double.infinity,
           // width: double.infinity,
           // decoration: const BoxDecoration(
           //   color: Colors.white,
           // ),
           children: [
-            // const LandingPage(),
-            Home(),
+            // UserLogin(),
+            LandingPage(),
+            // Home(),
+            // RestaurantPage(),
           ]),
       // bottomNavigationBar: Nav(),
     ));

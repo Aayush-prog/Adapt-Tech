@@ -7,60 +7,101 @@ import 'package:one_byte_foods/home/luxury.dart';
 import 'package:one_byte_foods/home/offers.dart';
 import 'package:one_byte_foods/home/restaurant.dart';
 import 'package:one_byte_foods/home/search.dart';
-import 'package:one_byte_foods/nav.dart';
+import 'package:one_byte_foods/login.dart';
 
 class Home extends StatelessWidget {
   Home({super.key});
-  String searchedContent = "";
+  // String searchedContent = "";
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Location(),
-        Search(
-          searchedContent: searchedContent,
-        ),
-        Row(
-          children: [
-            FilterRestaurants(),
-          ],
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 15),
-          child: Row(children: [
-            Text(
-              "Restaurant near you",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
-            ),
-          ]),
-        ),
-        Row(
-          children: [Restaurant()],
-        ),
-        Offers(),
-        Container(
-          margin: EdgeInsets.only(top: 15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    print("already routed");
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text("Home"),
+        actions: [
+          InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const UserLogin()));
+              },
+              child: const Icon(Icons.person))
+        ],
+      ),
+      body: ListView(
+        children: [
+          // Location(),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 60),
+            child:
+            Search(),
+          ),
+          const Row(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: Text("Need a table now??",
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 23)),
-              ),
-              Row(
-                children: [
-                  Restaurant(),
-                ],
-              ),
+              FilterRestaurants(),
             ],
           ),
-        ),
-        LuxuryExp(),
-        Nav(),
-      ],
+          const Padding(
+            padding: EdgeInsets.only(left: 15),
+            child: Row(children: [
+              Text(
+                "Restaurant near you",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
+              ),
+            ]),
+          ),
+          const Row(
+            children: [Restaurant()],
+          ),
+          const Offers(),
+          Container(
+            margin: const EdgeInsets.only(top: 15),
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 15),
+                  child: Text("Need a table now??",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 23)),
+                ),
+                Row(
+                  children: [
+                    Restaurant(),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          const LuxuryExp(),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.restaurant),
+            label: 'Reservation',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorites',
+          ),
+        ],
+        useLegacyColorScheme: true,
+        selectedItemColor: Colors.blue,
+        showUnselectedLabels: true,
+        unselectedItemColor: Colors.black,
+        backgroundColor: Colors.grey[350],
+      ),
     );
   }
 }

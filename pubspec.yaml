@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   geolocator: ^11.0.0
   geocode: 1.0.3
+  flutter_carousel_widget: ^2.2.0
 
 dev_dependencies:
   flutter_test:

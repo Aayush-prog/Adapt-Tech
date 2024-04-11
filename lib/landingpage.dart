@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:one_byte_foods/homepage.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -19,25 +20,16 @@ class LandingPage extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold)),
         ],
       ),
-      const SizedBox(height: 200),
-      Container(
-        margin: const EdgeInsets.only(top: 100),
-        width: 250,
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-            color: const Color.fromRGBO(249, 170, 51, 1),
-            borderRadius: BorderRadius.circular(30)),
-        child: const Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              "Let's Get Started",
-              textAlign: TextAlign.center,
-              style: TextStyle(fontWeight: FontWeight.bold),
-            )
-          ],
-        ),
-      ),
+      const SizedBox(height: 300),
+      ElevatedButton(
+          onPressed: () {
+            print("pressed");
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              print("inside route");
+              return Home();
+            }));
+          },
+          child: const Text("Let's Get Started")),
     ]);
   }
 }

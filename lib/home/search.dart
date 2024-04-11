@@ -1,38 +1,49 @@
 import 'package:flutter/material.dart';
 
 class Search extends StatefulWidget {
-  String searchedContent = "";
-
-  Search({super.key, required String searchedContent});
+  const Search({Key? key}) : super(key: key);
 
   @override
   State<Search> createState() => _SearchState();
 }
 
-TextEditingController searchTextChange = TextEditingController();
-
 class _SearchState extends State<Search> {
+  late TextEditingController searchTextController;
+
+  @override
+  void initState() {
+    super.initState();
+    searchTextController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    searchTextController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
-      height: 40,
-      child: TextField(
-        controller: searchTextChange,
-        decoration: InputDecoration(
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          hintText: "Search your favorite restaurant",
-          suffixIcon: InkWell(
-              onTap: () {
-                print(searchTextChange.text);
-                searchTextChange.text = "";
-              },
-              child: Icon(Icons.search)),
-          contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-        ),
-      ),
+      margin: EdgeInsets.symmetric(horizontal: 20),
+      child: SearchAnchor(
+          builder: (BuildContext context, SearchController controller) {
+        return SearchBar(
+          controller: controller,
+          onTap: () {
+            controller.openView;
+          },
+          padding: const MaterialStatePropertyAll<EdgeInsets>(
+              EdgeInsets.symmetric(horizontal: 16.0)),
+          hintText: "Search your fav restaurant",
+          trailing: <Widget>[
+            Tooltip(message: "Search", child: Icon(Icons.search))
+          ],
+        );
+      }, suggestionsBuilder:
+              (BuildContext context, SearchController controller) {
+        return List.empty();
+      }),
     );
   }
 }
