@@ -37,6 +37,7 @@ dependencies:
   geolocator: ^11.0.0
   geocode: 1.0.3
   flutter_carousel_widget: ^2.2.0
+  calendar_date_picker2: ^0.5.5
 
 dev_dependencies:
   flutter_test:

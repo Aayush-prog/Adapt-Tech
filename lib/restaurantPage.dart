@@ -5,6 +5,7 @@ import 'package:one_byte_foods/restaurant/caraousel.dart';
 import 'package:one_byte_foods/restaurant/imageGallery.dart';
 import 'package:one_byte_foods/restaurant/menu.dart';
 import 'package:one_byte_foods/restaurant/restaurantInfo.dart';
+import 'package:one_byte_foods/restaurant/reviews.dart';
 
 class RestaurantPage extends StatelessWidget {
   const RestaurantPage({super.key});
@@ -21,6 +22,7 @@ class RestaurantPage extends StatelessWidget {
             Offers(),
             Menu(),
             ImageGallery(),
+            Reviews(),
             ElevatedButton(onPressed: () {}, child: Text("Check Availability"))
           ],
         ));

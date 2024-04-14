@@ -1,3 +1,4 @@
+import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -5,8 +6,10 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 class Booking extends StatelessWidget {
-  const Booking({super.key});
-
+  Booking({super.key});
+  List<DateTime?> _dates = [
+    DateTime.now(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,42 +20,10 @@ class Booking extends StatelessWidget {
       child: Column(
         children: [
           Text("Book Now"),
-          Row(
-            children: [
-              Container(
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Colors.grey[600]),
-                child: Text(
-                  "Today",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Colors.grey[600]),
-                child: Text(
-                  "Tomorrow",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Colors.grey[600]),
-                child: Text(
-                  "28/29/2020",
-                  style: TextStyle(color: Colors.white),
-                ),
-              )
-            ],
+          CalendarDatePicker2(
+            config: CalendarDatePicker2Config(),
+            value: _dates,
+            onValueChanged: (dates) => _dates = dates,
           )
         ],
       ),
