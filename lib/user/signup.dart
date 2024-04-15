@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:one_byte_foods/login.dart';
+import 'package:one_byte_foods/user/login.dart';
 
 class UserSignUp extends StatefulWidget {
   const UserSignUp({super.key});

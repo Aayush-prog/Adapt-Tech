@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:one_byte_foods/home/restaurant.dart';
-import 'package:one_byte_foods/login.dart';
+import 'package:one_byte_foods/user/login.dart';
 
 class Favorites extends StatelessWidget {
   const Favorites({super.key});

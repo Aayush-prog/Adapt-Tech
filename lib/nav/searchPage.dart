@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:one_byte_foods/home/search.dart';
-import 'package:one_byte_foods/login.dart';
+import 'package:one_byte_foods/user/login.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});

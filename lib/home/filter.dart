@@ -8,7 +8,7 @@ class FilterRestaurants extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(15),
       child: Column(
-        children: [Text("image here"), Text("Nepali")],
+        children: [Text('Image'), Text("Nepali")],
       ),
     );
   }

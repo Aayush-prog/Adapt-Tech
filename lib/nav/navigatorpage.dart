@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:one_byte_foods/nav/favorites.dart';
 import 'package:one_byte_foods/nav/homepage.dart';
 import 'package:one_byte_foods/nav/searchPage.dart';
-import 'package:one_byte_foods/nav/userProfile.dart';
+import 'package:one_byte_foods/user/userProfile.dart';
 
 class MyWidget extends StatefulWidget {
   const MyWidget({super.key});
@@ -39,10 +39,11 @@ class _MyWidgetState extends State<MyWidget> {
                 icon: Icon(Icons.favorite), label: 'Favorites'),
           ],
           type: BottomNavigationBarType.fixed,
-          selectedItemColor: Colors.blue[400],
-          unselectedItemColor: Colors.grey[600],
+          selectedItemColor: Colors.blue,
+          unselectedItemColor: Colors.black,
           elevation: 20,
           showUnselectedLabels: true,
+          backgroundColor: Colors.amber[700],
         ));
   }
 }

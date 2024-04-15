@@ -46,6 +46,31 @@ class Offers extends StatelessWidget {
                       ),
                     ],
                   ),
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Container(
+                  padding: EdgeInsets.all(8),
+                  decoration: BoxDecoration(color: Colors.grey[600]),
+                  child: Column(
+                    children: [
+                      Text(
+                        "10% off",
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        "For the first Customers",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
                 )
               ],
             )

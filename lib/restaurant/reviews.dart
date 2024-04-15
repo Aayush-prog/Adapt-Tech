@@ -62,19 +62,35 @@ class _ReviewsState extends State<Reviews> {
                           )
                         ]),
                   ),
-                  Row(
-                    children: [
-                      Column(
-                        children: [Text("4"), Text("Food")],
-                      ),
-                      Icon(Icons.border_right),
-                      Column(
-                        children: [Text("4.5"), Text("Service")],
-                      ),
-                      Column(
-                        children: [Text("4"), Text("Ambience")],
-                      ),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Row(
+                      children: [
+                        Column(
+                          children: [Text("4"), Text("Food")],
+                        ),
+                        VerticalDivider(
+                          width: 30,
+                          thickness: 50,
+                          // indent: 20,
+                          // endIndent: 0,
+                          color: Colors.black,
+                        ),
+                        Column(
+                          children: [Text("4.5"), Text("Service")],
+                        ),
+                        VerticalDivider(
+                          width: 30,
+                          thickness: 50,
+                          // indent: 20,
+                          // endIndent: 0,
+                          color: Colors.black,
+                        ),
+                        Column(
+                          children: [Text("4"), Text("Ambience")],
+                        ),
+                      ],
+                    ),
                   )
                 ],
               )),

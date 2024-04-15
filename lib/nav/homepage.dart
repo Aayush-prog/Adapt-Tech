@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
@@ -7,7 +8,7 @@ import 'package:one_byte_foods/home/luxury.dart';
 import 'package:one_byte_foods/home/offers.dart';
 import 'package:one_byte_foods/home/restaurant.dart';
 import 'package:one_byte_foods/home/search.dart';
-import 'package:one_byte_foods/login.dart';
+import 'package:one_byte_foods/user/login.dart';
 
 class Home extends StatefulWidget {
   Home({super.key});
@@ -55,8 +56,11 @@ class _HomeState extends State<Home> {
               ),
             ]),
           ),
-          const Row(
-            children: [Restaurant()],
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: const Row(
+              children: [Restaurant(), Restaurant(), Restaurant()],
+            ),
           ),
           const Offers(),
           Container(
@@ -70,10 +74,16 @@ class _HomeState extends State<Home> {
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 23)),
                 ),
-                Row(
-                  children: [
-                    Restaurant(),
-                  ],
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Restaurant(),
+                      Restaurant(),
+                      Restaurant(),
+                      Restaurant(),
+                    ],
+                  ),
                 ),
               ],
             ),

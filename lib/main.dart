@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:one_byte_foods/home/search.dart';
-import 'package:one_byte_foods/landingpage.dart';
-import 'package:one_byte_foods/restaurantPage.dart';
+import 'package:one_byte_foods/nav/landingpage.dart';
+import 'package:one_byte_foods/restaurant/restaurantPage.dart';
 
 void main() {
   runApp(const MyApp());
