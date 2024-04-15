@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:one_byte_foods/homepage.dart';
+import 'package:one_byte_foods/nav/homepage.dart';
+import 'package:one_byte_foods/nav/navigatorpage.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -26,7 +27,7 @@ class LandingPage extends StatelessWidget {
             print("pressed");
             Navigator.push(context, MaterialPageRoute(builder: (context) {
               print("inside route");
-              return Home();
+              return MyWidget();
             }));
           },
           child: const Text("Let's Get Started")),

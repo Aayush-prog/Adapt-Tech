@@ -9,10 +9,15 @@ import 'package:one_byte_foods/home/restaurant.dart';
 import 'package:one_byte_foods/home/search.dart';
 import 'package:one_byte_foods/login.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   Home({super.key});
-  // String searchedContent = "";
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  // String searchedContent = "";
   @override
   Widget build(BuildContext context) {
     print("already routed");
@@ -34,8 +39,7 @@ class Home extends StatelessWidget {
           // Location(),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 60),
-            child:
-            Search(),
+            child: Search(),
           ),
           const Row(
             children: [
@@ -76,31 +80,6 @@ class Home extends StatelessWidget {
           ),
           const LuxuryExp(),
         ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.restaurant),
-            label: 'Reservation',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favorites',
-          ),
-        ],
-        useLegacyColorScheme: true,
-        selectedItemColor: Colors.blue,
-        showUnselectedLabels: true,
-        unselectedItemColor: Colors.black,
-        backgroundColor: Colors.grey[350],
       ),
     );
   }

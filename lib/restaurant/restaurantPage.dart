@@ -23,7 +23,6 @@ class RestaurantPage extends StatelessWidget {
             Menu(),
             ImageGallery(),
             Reviews(),
-            ElevatedButton(onPressed: () {}, child: Text("Check Availability"))
           ],
         ));
   }
