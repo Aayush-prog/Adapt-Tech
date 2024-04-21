@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Home"),
+        title: Location(),
         actions: [
           InkWell(
               onTap: () {
@@ -37,7 +37,6 @@ class _HomeState extends State<Home> {
       ),
       body: ListView(
         children: [
-          // Location(),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 60),
             child: Search(),

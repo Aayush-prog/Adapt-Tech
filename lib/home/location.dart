@@ -1,6 +1,11 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:geocode/geocode.dart';
 import 'package:geolocator/geolocator.dart';
+
+String? lat;
+String? long;
 
 class Location extends StatefulWidget {
   Location({super.key});
@@ -46,6 +51,8 @@ class _LocationState extends State<Location> {
     // When we reach here, permissions are granted and we can
     // continue accessing the position of the device.
     userLocation = await Geolocator.getCurrentPosition();
+    lat = userLocation.latitude.toString();
+    long = userLocation.longitude.toString();
     userAddress(userLocation.latitude, userLocation.longitude);
     return await Geolocator.getCurrentPosition();
   }
@@ -57,7 +64,9 @@ class _LocationState extends State<Location> {
   String? userCity;
 
   void userAddress(double lat, double long) async {
-    GeoCode geoCode = GeoCode(apiKey: "114553835603911e15958187x68293");
+    // List<Placemark> placemarks = await placemarkFromCoordinates(lat, long);
+    // print(placemarks[2]);
+    GeoCode geoCode = GeoCode(apiKey: "221778540976738492969x47892");
 
     Address add =
         await geoCode.reverseGeocoding(latitude: lat, longitude: long);
@@ -74,12 +83,8 @@ class _LocationState extends State<Location> {
       padding: const EdgeInsets.all(10),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Row(
-          children: [
-            Icon(Icons.location_on),
-            Text("$userStrtNum, $userStreet,  $userCity")
-          ],
-        ),
-        Icon(Icons.person_2)
+          children: [Icon(Icons.location_on), Text('$lat , $long')],
+        )
       ]),
     );
   }
